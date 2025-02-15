@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const port = process.env.PORT || 8080;
 
 const app = express();
 
@@ -15,7 +16,7 @@ mongoose.connect('mongodb+srv://danielvazquez:uDxcNzeplxNqRBK5@cluster0.n7ayk.mo
 .then( () => {
     console.log("Conectado a la base de datos");
     // Definiendo el puerto por el cual estará respondiendo el servidor de API's
-    app.listen(3000, () => {
+    app.listen(port, () => {
         console.log("El servidor esta respondiendo en el puerto 3000");
     });
 })
